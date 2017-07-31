@@ -1,17 +1,26 @@
 I have used Calabash, cucumber with Ruby
+
 Tested the app on Android phone( One A9 HTC)
+
 I have used Ruby 2.2.6
+
+alternatively we can enter the id in the Feature file and use the step defination as given below:
+
+Then /^I enter text "([^\"]*)" into field with id "([^\"]*)"$/ do
+  enter_text("android.widget.EditText id:'#{id}'", text)
+end
+
 use below command to run the test:
 calabash-android run base.apk features\quidco.feature --tags @joinus
 
 
 find the test result below:
-c:\test for ruby2.2.6>calabash-android run base.apk features\quidcofeature --tags @joinus
+c:\test for ruby2.2.6>calabash-android run base.apk features\quidco.feature --tags @joinus
 *** WARNING: You must use ANSICON 1.31 or higher (https://github.com/adoxa/ansicon/) to get coloured output on Windows
 Feature: Join us
 
   @joinus
-  Scenario: Join us on Quidco                       # features/my_first.feature:3
+  Scenario: Join us on Quidco                       # features/quidco.feature:3
     Given the user is on the launch page of the app # features/step_definitions/calabash_steps.rb:3
     When the user clicks on the join us tab         # features/step_definitions/calabash_steps.rb:9
     And again clicks on join us tab                 # features/step_definitions/calabash_steps.rb:14
