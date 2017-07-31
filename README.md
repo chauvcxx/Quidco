@@ -4,12 +4,6 @@ Tested the app on Android phone( One A9 HTC)
 
 I have used Ruby 2.2.6
 
-alternatively we can enter the id in the Feature file and use the step defination as given below:
-
-Then /^I enter text "([^\"]*)" into field with id "([^\"]*)"$/ do
-  enter_text("android.widget.EditText id:'#{id}'", "first")
-end
-
 use below command to run the test:
 calabash-android run base.apk features\quidco.feature --tags @joinus
 
